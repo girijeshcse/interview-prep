@@ -1,0 +1,21 @@
+
+def caesarCipher(s, key):
+
+    # if string exists or not
+
+    new_string = []
+    key_final = key % 26
+
+    list_of_alphabets = list("abcdefghijklmnopqrstuvwxyz")
+
+    for i in s:
+        new_string.append(caesar_helper(i, key, list_of_alphabets))
+    
+    return "".join(new_string)
+
+
+
+def caesar_helper(myChar, key, chooseFrom):
+    newChar = chooseFrom.index(myChar) + key
+
+    return chooseFrom[newChar % 26]

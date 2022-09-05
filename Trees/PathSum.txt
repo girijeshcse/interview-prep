@@ -1,0 +1,19 @@
+# amazon fav
+#          5
+#         / \
+#        4   8
+#       /   / \
+#      11  13  4
+#     /  \      \
+#    7    2      1
+# sum = 22
+
+def pathSum(self, root, sum):
+    if not root: return False
+
+    sum = sum - root.val
+
+    if not root.left and not root.right:
+        return sum == 0
+    else:
+        return self.pathSum(root.left, sum) or self.pathSum(root.right, sum)

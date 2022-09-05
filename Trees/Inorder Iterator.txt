@@ -1,0 +1,35 @@
+# class and related stuff is all there
+
+def __init__(self, root):
+    self.root = root
+    self.stack = []
+    while(self.root):
+        self.stack.append(self.root)
+        self.root = self.root.left
+
+def next(self):
+
+    node = self.stack.pop()
+    val_toReturn = node.val
+
+    if node.right:
+        node = node.right
+        while(node):
+            self.stack.append(node)
+            node = node.left
+
+    return val_toReturn
+
+
+def hasNext(self):
+    if self.stack:
+        return True
+
+    return False
+
+
+# main
+
+#while obj.hasNext():
+#    newVal = next()
+#    myArr.append(newVal)

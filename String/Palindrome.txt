@@ -1,0 +1,24 @@
+# not so great way
+
+def palindrome(s):
+    reverse = ''
+
+    for i in reversed(range(len(s))):
+        reverse += s[i]
+
+    if(s == reverse):
+        return "YES"
+    return "NO"
+
+
+# more of one of the great way
+
+def palindrome(s):
+    reverse = []
+
+    for i in reversed(range(len(s))):
+        reverse.append(s[i])
+
+    if(s == ''.join(reverse)):
+        return "YES"
+    return "NO"

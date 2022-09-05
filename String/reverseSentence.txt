@@ -1,0 +1,8 @@
+def rev_str(sentence):
+    words = sentence.split(" ")
+
+    #words = ["hello", "world"]
+
+    reverse = ' '.join(reversed(words))
+
+    return reverse

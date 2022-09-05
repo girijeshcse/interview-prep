@@ -1,0 +1,42 @@
+# assuming node class is defined
+# node.next for singly linked list
+# node.next and node.prev for doubly linked list
+
+#using diary
+
+def hasCycleWithDiary(self, head):
+
+    # take care of NO head, 1 value, 2 value
+
+    diary = {}
+
+    while head:
+        if head in diary:
+            return True
+        else:
+            diary[head] = True
+        head = head.next
+    return False
+
+
+def hasCycle(self, head):
+    if not head:
+        return False
+
+    if head.next == None:
+        return Flase
+
+    if head.next.next == None:
+        return False
+
+    fast = head
+    slow = head
+
+    while(fast != None and slow != None and fast.next != None):
+        slow = slow.next
+        fast = fast.next.next
+
+        if fast == slow:
+            return True
+
+    return False
